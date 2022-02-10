@@ -16,15 +16,10 @@ if ($LASTEXITCODE -ge 8) {
     Write-Error "robocopy.exe /E ${PWD} ${BOSH_INSTALL_TARGET}\src"
 }
 
-# The executable is called envoy.exe because diego components look
-# for it
-$pkg_name="envoy"
-$pkg_path="code.cloudfoundry.org/envoy-nginx"
-
-Push-Location $pkg_path
-go.exe build -mod vendor -o "${BOSH_INSTALL_TARGET}\${pkg_name}.exe"
+Push-Location code.cloudfoundry.org/envoy-nginx
+go.exe build -mod vendor -o "${BOSH_INSTALL_TARGET}\envoy.exe"
 if ($LASTEXITCODE -ne 0) {
-    Write-Error "Error compiling: ${pkg_path}"
+    Write-Error "Error compiling: code.cloudfoundry.org/envoy-nginx"
 }
 Pop-Location
 
