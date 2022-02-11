@@ -22,6 +22,7 @@ Push-Location code.cloudfoundry.org/envoy-nginx
 go.exe build -v -mod vendor -o "${BOSH_INSTALL_TARGET}\envoy.exe"
 if ($LASTEXITCODE -ne 0) {
     Write-Error "Error compiling: code.cloudfoundry.org/envoy-nginx"
+    Start-Sleep -Seconds 9999
 }
 Pop-Location
 
