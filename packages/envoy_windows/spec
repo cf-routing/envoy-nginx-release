@@ -6,6 +6,8 @@ dependencies:
 
 files:
   - envoy-nginx/envoy-nginx*.zip
+  - code.cloudfoundry.org/envoy-nginx/go.mod
+  - code.cloudfoundry.org/envoy-nginx/go.sum
   - code.cloudfoundry.org/envoy-nginx/*.go # gosub
   - code.cloudfoundry.org/envoy-nginx/app/*.go # gosub
   - code.cloudfoundry.org/envoy-nginx/parser/*.go # gosub
